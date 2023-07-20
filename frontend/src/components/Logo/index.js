@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import logo from '../../images/logo.svg'
-import './style.css'
+import './style.css';
 
 export default function Logo() {
     return (
