@@ -1,17 +1,25 @@
 import perfil from '../../images/perfil.svg';
 import sacola from '../../images/sacola.svg';
-import './estilo.css';
+import styled from 'styled-components';
 
 const icones = [ perfil, sacola ]
+const IconesContainer = styled.ul`
+    display: flex;
+    align-items: center;
+`;
+const IconeContainer = styled.li`
+    margin-right: 40px;
+    width: 25px;
+`;
 
 
 export default function IconesHeader() {
     return (
-        <ul className='icones'>
+        <IconesContainer>
         { icones.map( (icone) => (
           // eslint-disable-next-line jsx-a11y/alt-text
-          <li className='icone'><img src={icone}></img></li>
+          <IconeContainer><img src={icone}></img></IconeContainer>
         )) }
-    </ul>
+        </IconesContainer>
     )
 }
