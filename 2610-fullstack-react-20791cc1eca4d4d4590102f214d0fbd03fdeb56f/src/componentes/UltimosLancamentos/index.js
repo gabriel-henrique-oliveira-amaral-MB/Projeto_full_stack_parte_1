@@ -1,9 +1,8 @@
-/* eslint-disable jsx-a11y/alt-text */
-import { livros } from './dadosLancamentos'
-import styled from 'styled-components'
+import { livros } from './dadosUltimosLancamentos'
 import { Titulo } from '../Titulo'
 import CardRecomenda from '../CardRecomenda'
-import imagemLivro from '../../images/livro2.png'
+import imagemLivro from '../../imagens/livro2.png' 
+import styled from 'styled-components'
 
 const UltimosLancamentosContainer = styled.section`
     background-color: #EBECEE;
@@ -11,6 +10,7 @@ const UltimosLancamentosContainer = styled.section`
     display: flex;
     flex-direction: column;
 `
+
 const NovosLivrosContainer = styled.div`
     margin-top: 30px;
     display: flex;
@@ -22,17 +22,22 @@ const NovosLivrosContainer = styled.div`
 function UltimosLancamentos() {
     return (
         <UltimosLancamentosContainer>
-            <Titulo cor="#EB9B00" tamanhoFonte="36px" alinhamento="center">ÚLTIMOS LANÇAMENTOS</Titulo>
+            <Titulo
+                cor="#EB9B00"
+                tamanhoFonte="36px"
+            >
+                ÚLTIMOS LANÇAMENTOS
+            </Titulo>
             <NovosLivrosContainer>
-                { livros.map( livro => (
+                {livros.map( livro => (
                     <img src={livro.src}/>
-                ) ) }
+                ))}
             </NovosLivrosContainer>
-            <CardRecomenda 
-            titulo="Talvez você se interrese por..."
-            subtitulo="Angular 12"
-            descricao="Construindo uma aplicação com a plataforma Google"
-            img={imagemLivro}
+            <CardRecomenda
+                titulo="Talvez você se interesse por"
+                subtitulo="Angular 11"
+                descricao="Construindo uma aplicação com a plataforma Google"
+                img={imagemLivro}
             />
         </UltimosLancamentosContainer>
     )
